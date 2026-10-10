@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10213b">
+  <meta name="description" content="Simple English AI Chemistry tutor and BS/MS Chemistry study library.">
+  <title>Chemistry AI — Learn Clearly</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Chemistry AI home"><span class="brand-icon">⚗</span><span>Chemistry<span class="brand-accent">AI</span><small>Learn clearly. Think deeply.</small></span></a>
+    <button id="menuBtn" class="menu-btn" aria-label="Toggle navigation">☰</button>
+  </header>
+  <div class="app-layout">
+    <aside id="sidebar" class="sidebar">
+      <button class="nav-item active" data-view="home">⌂ <span>Home</span></button>
+      <button class="nav-item" data-view="chat">✦ <span>AI Chemistry Tutor</span></button>
+      <button class="nav-item" data-view="library">▤ <span>Study Library</span></button>
+      <button class="nav-item" data-view="quiz">✓ <span>Quick Quiz</span></button>
+      <div class="sidebar-note"><strong>Study levels</strong><p>BS foundations → Advanced concepts → MS-level depth</p></div>
+      <div class="sidebar-footer">Student learning workspace</div>
+    </aside>
+
+    <main class="main">
+      <section id="homeView" class="view">
+        <div class="hero">
+          <div class="eyebrow">YOUR PERSONAL CHEMISTRY LEARNING SPACE</div>
+          <h1>Understand chemistry.<br><span>One concept at a time.</span></h1>
+          <p>Learn in simple English with clear definitions, step-by-step reasoning, worked examples and deeper scientific explanations.</p>
+          <div class="hero-actions"><button class="primary-btn" data-goto="chat">Ask the AI tutor <span>→</span></button><button class="secondary-btn" data-goto="library">Explore notes</button></div>
+          <div class="hero-orbit"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="molecule">C</div><span class="atom atom-a">H</span><span class="atom atom-b">O</span><span class="atom atom-c">N</span></div>
+        </div>
+        <div class="section-heading"><div><div class="eyebrow">LEARNING DASHBOARD</div><h2>Where would you like to start?</h2></div></div>
+        <div class="feature-grid">
+          <button class="feature-card" data-goto="chat"><span class="feature-icon purple">✦</span><strong>AI Chemistry Tutor</strong><p>Ask questions and request explanations at your level.</p><span class="card-link">Start a conversation →</span></button>
+          <button class="feature-card" data-goto="library"><span class="feature-icon blue">▤</span><strong>BS + MS Study Library</strong><p>Explore original topic guides and build your own notes collection.</p><span class="card-link">Browse subjects →</span></button>
+          <button class="feature-card" data-goto="quiz"><span class="feature-icon green">✓</span><strong>Quick Quiz</strong><p>Test core concepts and check your understanding.</p><span class="card-link">Try a question →</span></button>
+        </div>
+        <div class="notice"><span>ⓘ</span><p><strong>Learning note:</strong> AI can make mistakes. Check important equations, mechanisms and scientific claims against reliable textbooks and your instructor’s guidance.</p></div>
+      </section>
+
+      <section id="chatView" class="view hidden">
+        <div class="page-head"><div class="eyebrow">YOUR STUDY PARTNER</div><h1>AI Chemistry Tutor</h1><p>Ask in English. Request simple explanations, then ask for deeper BS/MS-level detail.</p></div>
+        <div class="level-row"><label for="levelSelect">Explanation level</label><select id="levelSelect"><option>Simple English</option><option>BS Chemistry</option><option>Advanced / MS level</option></select><button id="clearChat" class="text-btn">Clear chat</button></div>
+        <div id="chatMessages" class="chat-messages">
+          <div class="message assistant"><div class="avatar">⚗</div><div class="bubble"><strong>Welcome to Chemistry AI!</strong><p>Ask me about organic, inorganic, physical, analytical or biochemistry. I can explain definitions, mechanisms, derivations and worked examples in simple English.</p><p class="suggestion-label">Try one of these:</p><div class="suggestions"><button>Explain SN1 and SN2 reactions</button><button>Derive the Henderson–Hasselbalch equation</button><button>Explain crystal field theory</button></div></div></div>
+        </div>
+        <form id="chatForm" class="chat-form"><textarea id="chatInput" rows="2" placeholder="Ask a Chemistry question..." required></textarea><button class="send-btn" type="submit" aria-label="Send question">↑</button><div class="chat-hint">Do not enter passwords or private information. AI answers should be verified.</div></form>
+      </section>
+
+      <section id="libraryView" class="view hidden">
+        <div class="page-head"><div class="eyebrow">ORIGINAL STUDY GUIDES</div><h1>BS + MS Chemistry Library</h1><p>Choose a topic. These are original learning outlines, not copied textbook chapters.</p></div>
+        <div class="search-wrap"><span>⌕</span><input id="topicSearch" type="search" placeholder="Search topics, e.g. resonance, NMR, kinetics..."></div>
+        <div id="topicGrid" class="topic-grid"></div>
+        <div id="lessonPanel" class="lesson-panel hidden"><button id="closeLesson" class="text-btn">← Back to topics</button><div id="lessonContent"></div></div>
+      </section>
+
+      <section id="quizView" class="view hidden">
+        <div class="page-head"><div class="eyebrow">CHECK YOUR UNDERSTANDING</div><h1>Quick Chemistry Quiz</h1><p>Answer each question and review the explanation.</p></div>
+        <div class="quiz-card"><div id="quizProgress" class="eyebrow">QUESTION 1 OF 5</div><h2 id="quizQuestion"></h2><div id="quizOptions" class="quiz-options"></div><div id="quizFeedback" class="quiz-feedback"></div><div class="quiz-actions"><button id="nextQuestion" class="primary-btn" disabled>Next question →</button></div></div>
+      </section>
+      <footer class="footer">Chemistry AI · Independent learning project · Original notes in progress</footer>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

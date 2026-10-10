@@ -1,0 +1,10 @@
+{
+  "name": "Chemistry AI — Learn Clearly",
+  "short_name": "Chemistry AI",
+  "description": "AI Chemistry tutor and BS/MS study library",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f7fb",
+  "theme_color": "#10213b",
+  "icons": []
+}
